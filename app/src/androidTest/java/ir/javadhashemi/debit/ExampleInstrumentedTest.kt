@@ -1,4 +1,4 @@
-package ir.javad_hashemi.debit
+package ir.javadhashemi.debit
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

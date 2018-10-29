@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion androidCompileSdkVersion
     defaultConfig {
-        applicationId "ir.javad_hashemi.debit"
+        applicationId "ir.javadhashemi.debit"
         minSdkVersion androidMinSdkVersion
         targetSdkVersion androidTargetSdkVersion
         versionCode 1

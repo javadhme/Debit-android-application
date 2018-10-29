@@ -1,4 +1,4 @@
-package ir.javad_hashemi.debit
+package ir.javadhashemi.debit
 
 import org.junit.Test
 

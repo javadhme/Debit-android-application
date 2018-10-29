@@ -1,4 +1,4 @@
-package ir.javad_hashemi.debit.data.entity
+package ir.javadhashemi.debit.data.entity
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

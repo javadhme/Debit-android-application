@@ -1,9 +1,9 @@
-package ir.javad_hashemi.debit.data.db
+package ir.javadhashemi.debit.data.db
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
-import ir.javad_hashemi.debit.data.entity.DebitEntity
+import ir.javadhashemi.debit.data.entity.DebitEntity
 
 /**
  * CREATED BY Javadroid FOR `Debit` PROJECT
