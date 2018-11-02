@@ -73,6 +73,12 @@ dependencies {
     implementation RX.rxAndroid
     //-----------------------------------------------------
 
+    //----------------/ Dagger Libs \----------------------
+    implementation dagger.dagger_android
+    kapt dagger.dagger_compiler
+    kapt dagger.dagger_processor
+    //-----------------------------------------------------
+
     //----------------/ Test Libs \------------------------
     testImplementation testDependencies.junit
     testImplementation testDependencies.mockitoKotlin
