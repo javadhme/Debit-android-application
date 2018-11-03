@@ -52,6 +52,10 @@ ext {
             dagger_processor: "com.google.dagger:dagger-android-processor:$dagger_version"
     ]
 
+    common = [
+            anko_common: "org.jetbrains.anko:anko-commons:0.10.4"
+    ]
+
     testDependencies = [
             //JUnit
             junit        : "junit:junit:4.12",

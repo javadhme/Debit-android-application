@@ -42,6 +42,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //----------------/ Common libraries \-----------------
+    implementation common.anko_common
+    //-----------------------------------------------------
+
     //----------------/ support libraries \----------------
     implementation android_support.appCompat
     implementation android_support.design
