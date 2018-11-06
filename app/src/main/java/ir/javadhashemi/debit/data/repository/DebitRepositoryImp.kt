@@ -15,7 +15,11 @@ class DebitRepositoryImp @Inject constructor(
         debitDao.addNewDebit(debit)
     }
 
-    override fun getAllDebits(): LiveData<List<DebitEntity>> {
-        return debitDao.getAllDebits()
+    override fun getAllDebits(type: Int): LiveData<List<DebitEntity>> {
+        return debitDao.getAllDebits(type)
+    }
+
+    override fun getDebitSumByType(type: Int): Long {
+        return debitDao.getTotalDebitsByType(type)
     }
 }

@@ -7,6 +7,7 @@ interface DebitRepository {
 
     fun addNewDebit(debit: DebitEntity)
 
-    fun getAllDebits(): LiveData<List<DebitEntity>>
+    fun getAllDebits(type: Int): LiveData<List<DebitEntity>>
 
+    fun getDebitSumByType(type: Int) : Long
 }
