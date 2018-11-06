@@ -5,12 +5,14 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
+abstract class ObservableUseCase<R, T> : UseCase<R, Observable<T>>() {
 
-abstract class ObservableUseCase<T> : UseCase<Observable<T>>() {
-
-    fun execute(onResponse: (T) -> Unit): Disposable {
+    fun execute(
+            input : R,
+            onResponse: (T) -> Unit
+    ): Disposable {
         return this
-                .execute()
+                .execute(input)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

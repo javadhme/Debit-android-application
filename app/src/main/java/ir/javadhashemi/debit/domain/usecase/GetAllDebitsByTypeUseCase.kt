@@ -14,10 +14,10 @@ import javax.inject.Inject
 class GetAllDebitsUseCase @Inject constructor(
         private val repository: DebitRepository,
         private val mapper: DebitEntityMapper
-) : LiveDataUseCase<List<DebitModel>>() {
+) : LiveDataUseCase<Any,List<DebitModel>>() {
 
 
-    override fun execute(): LiveData<List<DebitModel>> {
+    override fun execute(input: Any): LiveData<List<DebitModel>> {
         return Transformations.map(repository.getAllDebits()) {
             it.map { entity ->
                 mapper.map(entity)
