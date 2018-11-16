@@ -1,7 +1,7 @@
 package ir.javadhashemi.debit.data.repository
 
 import android.arch.lifecycle.LiveData
-import io.reactivex.Flowable
+import android.arch.lifecycle.MutableLiveData
 import ir.javadhashemi.debit.data.db.DebitDao
 import ir.javadhashemi.debit.data.entity.DebitEntity
 import ir.javadhashemi.debit.domain.repository.DebitRepository
@@ -13,6 +13,11 @@ class DebitRepositoryImp @Inject constructor(
 
     override fun addNewDebit(debit: DebitEntity) {
         debitDao.addNewDebit(debit)
+    }
+
+    override fun editDebit(debit: DebitEntity) : Int{
+        return debitDao.updateDebit(debit)
+
     }
 
     override fun getAllDebits(type: Int): LiveData<List<DebitEntity>> {

@@ -49,7 +49,9 @@ ext {
     dagger = [
             dagger_android  : "com.google.dagger:dagger-android:$dagger_version",
             dagger_compiler : "com.google.dagger:dagger-compiler:$dagger_version",
-            dagger_processor: "com.google.dagger:dagger-android-processor:$dagger_version"
+            dagger_processor: "com.google.dagger:dagger-android-processor:$dagger_version",
+            dagger_support  : "com.google.dagger:dagger-android-support:$dagger_version"
+
     ]
 
     common = [
@@ -67,7 +69,7 @@ ext {
             esperesso    : "com.android.support.test.espresso:espresso-core:3.0.1",
 
             //Mockito
-            mockitoKotlin: "com.nhaarman:mockito-kotlin-kt1.1:1.5.0",
+            mockitoKotlin: "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0",
 
             //Arch Testing
             archTesting  : "android.arch.core:core-testing:$arch_version"

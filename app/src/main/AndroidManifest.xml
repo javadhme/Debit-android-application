@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="28">
-        <activity android:name="ir.javadhashemi.debit.MainActivity">
+        <activity android:name="ir.javadhashemi.debit.presentation.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

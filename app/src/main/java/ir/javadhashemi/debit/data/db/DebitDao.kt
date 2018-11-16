@@ -24,7 +24,7 @@ interface DebitDao {
     fun getTotalDebitsByType(type: Int): Long
 
     @Update
-    fun updateDebit(debit: DebitEntity)
+    fun updateDebit(debit: DebitEntity) : Int
 
 
 

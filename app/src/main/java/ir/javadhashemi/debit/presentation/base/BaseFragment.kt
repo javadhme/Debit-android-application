@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.*
+import dagger.android.AndroidInjection
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -37,6 +38,7 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+//        AndroidSupportInjection.inject(this)
         if (menuId > 0) {
             setHasOptionsMenu(true)
         }

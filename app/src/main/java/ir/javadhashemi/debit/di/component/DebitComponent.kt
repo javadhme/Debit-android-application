@@ -5,15 +5,19 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import ir.javadhashemi.debit.App
+import ir.javadhashemi.debit.di.builder.ActivityBuilder
+import ir.javadhashemi.debit.di.module.ApiModule
 import ir.javadhashemi.debit.di.module.AppModule
 import ir.javadhashemi.debit.di.module.DatabaseModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
+    (AndroidInjectionModule::class),
     (AppModule::class),
     (DatabaseModule::class),
-    (AndroidInjectionModule::class)]
+    (ApiModule::class),
+    (ActivityBuilder::class)]
 )
 interface DebitComponent {
 

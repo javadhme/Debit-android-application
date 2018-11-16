@@ -79,6 +79,7 @@ dependencies {
 
     //----------------/ Dagger Libs \----------------------
     implementation dagger.dagger_android
+    implementation dagger.dagger_support
     kapt dagger.dagger_compiler
     kapt dagger.dagger_processor
     //-----------------------------------------------------
