@@ -8,6 +8,7 @@ import dagger.multibindings.IntoMap
 import ir.javadhashemi.debit.di.qualifier.ViewModelKey
 import ir.javadhashemi.debit.presentation.base.ViewModelProviderFactory
 
+/*
 @Module
 abstract class ActivityModule {
 
@@ -22,4 +23,4 @@ abstract class ActivityModule {
     @IntoMap
     @ViewModelKey(MainViewModel::class)
     abstract fun mainViewModel(mainViewModel: MainViewModel)
-}
+}*/
