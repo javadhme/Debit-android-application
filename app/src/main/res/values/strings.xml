@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Debit</string>
+    <string name="total_debit_title">مجموع بدهی:</string>
+    <string name="total_credit_title">مجموع طلب:</string>
+    <string name="add_title">اضافه کردن بدهی/طلب</string>
+    <string name="debit_label">بدهی</string>
+    <string name="credit_label">طلب</string>
+    <string name="from_who_text">از چه کسی؟</string>
+    <string name="how_much">چقدر?</string>
+    <string name="when_title">تاریخ سررسید؟</string>
+    <string name="description_text">توضیحات</string>
+    <string name="confirm_text">تایید</string>
+    <string name="decline_text">انصراف</string>
+    <string name="not_defined_text">معلوم نیست</string>
+    <string name="create_title"> افزودن آیتم جدید</string>
 </resources>

@@ -3,6 +3,7 @@ package ir.javadhashemi.debit.presentation.base
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
@@ -10,7 +11,8 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.*
 import dagger.android.AndroidInjection
-import java.lang.reflect.ParameterizedType
+import dagger.android.support.AndroidSupportInjection
+import javax.inject.Inject
 
 /**
  * CREATED BY Javadroid FOR `WiCalory` PROJECT
@@ -24,17 +26,26 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
 
     override lateinit var binding: B
 
+    @Inject
     override lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    override val viewModel: V by lazy {
-        @Suppress("UNCHECKED_CAST")
-        ViewModelProviders.of(this, viewModelFactory).get((javaClass
-                .genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<V>)
-    }
+//    override val viewModel: V by lazy {
+//        @Suppress("UNCHECKED_CAST")
+//        ViewModelProviders.of(this, viewModelFactory).get((javaClass
+//                .genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<V>)
+//    }
+
+    inline fun <reified T : BaseViewModel> getLazyViewModel(): Lazy<T> =
+            lazy { ViewModelProviders.of(this, viewModelFactory)[T::class.java] }
 
     abstract var title: String
     abstract var menuId: Int
     var backCallback: MutableLiveData<OnBackPressedListener?>? = null
+
+    override fun onAttach(context: Context?) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)

@@ -9,6 +9,7 @@ import ir.javadhashemi.debit.di.builder.ActivityBuilder
 import ir.javadhashemi.debit.di.module.ApiModule
 import ir.javadhashemi.debit.di.module.AppModule
 import ir.javadhashemi.debit.di.module.DatabaseModule
+import ir.javadhashemi.debit.di.module.NavigatorModule
 import javax.inject.Singleton
 
 @Singleton
@@ -17,8 +18,9 @@ import javax.inject.Singleton
     (AppModule::class),
     (DatabaseModule::class),
     (ApiModule::class),
-    (ActivityBuilder::class)]
-)
+    (ActivityBuilder::class),
+    (NavigatorModule::class)
+])
 interface DebitComponent {
 
     @Component.Builder

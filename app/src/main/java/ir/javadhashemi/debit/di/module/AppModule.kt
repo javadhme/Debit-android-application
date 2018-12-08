@@ -4,8 +4,11 @@ import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import ir.javadhashemi.debit.di.builder.ViewModelFactoryBuilder
 
-@Module
+@Module(includes = [
+    (ViewModelFactoryBuilder::class)
+])
 class AppModule {
 
 
@@ -14,7 +17,7 @@ class AppModule {
      */
 
     @Provides
-    fun provideContext(application: Application) : Context {
+    fun provideContext(application: Application): Context {
         return application.applicationContext
     }
 

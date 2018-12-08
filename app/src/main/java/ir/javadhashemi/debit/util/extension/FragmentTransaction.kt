@@ -1,4 +1,4 @@
-package com.yaramobile.wicalory.util.extension
+package ir.javadhashemi.debit.util.extension
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction

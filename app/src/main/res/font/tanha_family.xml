@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <font android:font="@font/tanha"
+        android:fontWeight="@integer/font_weight_normal"
+        android:fontStyle="normal"
+        app:font="@font/tanha"
+        app:fontWeight="@integer/font_weight_normal"
+        app:fontStyle="normal"
+        />
+
+</font-family>
