@@ -38,7 +38,7 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
     inline fun <reified T : BaseViewModel> getLazyViewModel(): Lazy<T> =
             lazy { ViewModelProviders.of(this, viewModelFactory)[T::class.java] }
 
-    abstract var title: String
+    abstract val title: String
     abstract var menuId: Int
     var backCallback: MutableLiveData<OnBackPressedListener?>? = null
 

@@ -1,39 +1,26 @@
 package ir.javadhashemi.debit.di.component
 
-import android.app.Application
-import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjectionModule
+import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 import ir.javadhashemi.debit.App
-import ir.javadhashemi.debit.di.builder.ActivityBuilder
 import ir.javadhashemi.debit.di.module.ApiModule
 import ir.javadhashemi.debit.di.module.AppModule
 import ir.javadhashemi.debit.di.module.DatabaseModule
-import ir.javadhashemi.debit.di.module.NavigatorModule
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    (AndroidInjectionModule::class),
-    (AppModule::class),
-    (DatabaseModule::class),
-    (ApiModule::class),
-    (ActivityBuilder::class),
-    (NavigatorModule::class)
+    (AndroidSupportInjectionModule::class)
+    , (AppModule::class)
+    , (DatabaseModule::class)
+    , (ApiModule::class)
+    , (ContributeActivity::class)
 ])
-interface DebitComponent {
+interface DebitComponent : AndroidInjector<App> {
 
     @Component.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun application(application: Application): Builder
-
-        fun build(): DebitComponent
-
-    }
-
-    fun inject(app: App)
+    abstract class Builder : AndroidInjector.Builder<App>()
 
 
 }

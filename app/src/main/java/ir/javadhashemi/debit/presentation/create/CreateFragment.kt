@@ -16,11 +16,13 @@ class CreateFragment : BaseFragment<CreateViewModel, FragmentCreateBinding>() {
     override val layoutId: Int = R.layout.fragment_create
     override var menuId: Int = 0
     override val toolbar: Toolbar? by lazy { create_tool_bar }
-    override var title: String = resources.getString(R.string.create_title)
+    override val title: String by lazy {
+        context?.resources?.getString(R.string.create_title) ?: ""
+    }
     override val progressBar: ProgressBar? = null
 
-    @Inject
-    private lateinit var navigator: NavigatorController
+//    @Inject
+//    private lateinit var navigator: NavigatorController
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

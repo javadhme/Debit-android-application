@@ -1,14 +1,7 @@
 package ir.javadhashemi.debit.domain.usecase
 
-import android.arch.lifecycle.LiveData
-import com.nhaarman.mockito_kotlin.mock
-import com.nhaarman.mockito_kotlin.whenever
-import ir.javadhashemi.debit.data.entity.DebitEntity
 import ir.javadhashemi.debit.domain.mapper.DebitEntityMapper
-import ir.javadhashemi.debit.domain.model.DebitModel
 import ir.javadhashemi.debit.domain.repository.DebitRepository
-import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
@@ -34,8 +27,8 @@ class GetAllDebitsByTypeUseCaseTest {
 
     @Test
     fun shouldGetDebitModelListFromRepository() {
-        val mock = mock<LiveData<List<DebitEntity>>>()
-        whenever(repository.getAllDebits(1)).thenReturn(mock)
+//        val mock = mock<LiveData<List<DebitEntity>>>()
+//        whenever(repository.getAllDebits(1)).thenReturn(mock)
 
         val result = getAllDebitsByType.execute(1)
 

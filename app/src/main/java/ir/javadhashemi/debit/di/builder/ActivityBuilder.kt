@@ -1,21 +1,20 @@
 package ir.javadhashemi.debit.di.builder
 
+import android.support.v7.app.AppCompatActivity
+import dagger.Binds
 import dagger.Module
-import dagger.android.ContributesAndroidInjector
-import ir.javadhashemi.debit.di.module.create.CreateFragmentProvider
-import ir.javadhashemi.debit.di.module.home.HomeFragmentProvider
+import dagger.Provides
+import ir.javadhashemi.debit.di.scope.ActivityScope
+import ir.javadhashemi.debit.presentation.base.NavigatorController
 import ir.javadhashemi.debit.presentation.main.MainActivity
+import javax.inject.Inject
+
 
 @Module
 abstract class ActivityBuilder {
 
-
-    @ContributesAndroidInjector(modules = [
-        (HomeFragmentProvider::class),
-        (CreateFragmentProvider::class)
-    ])
-    abstract fun bindMainActivity() : MainActivity
-
-
+    @ActivityScope
+    @Binds
+    abstract fun provideMainActivityView(activity: MainActivity) : AppCompatActivity
 
 }

@@ -8,7 +8,7 @@ import ir.javadhashemi.debit.databinding.FragmentHomeBinding
 import ir.javadhashemi.debit.presentation.base.BaseFragment
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
-    override var title: String = "Home"
+    override val title: String = "Home"
 
     override var menuId: Int = 0
     override val layoutId: Int = R.layout.fragment_home

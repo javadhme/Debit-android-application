@@ -15,7 +15,6 @@ class AppModule {
     /**
      * provide default context for any classes need context
      */
-
     @Provides
     fun provideContext(application: Application): Context {
         return application.applicationContext

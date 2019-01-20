@@ -8,13 +8,14 @@ import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import dagger.android.AndroidInjection
+import dagger.android.support.DaggerAppCompatActivity
 
 /**
  * CREATED BY Javadroid FOR `WiCalory` PROJECT
  * AT: 2018/Jun/12 16:08
  */
 abstract class BaseActivity<V : BaseViewModel, B : ViewDataBinding>
-    : AppCompatActivity(), BaseViewGroup<V, B> {
+    : DaggerAppCompatActivity(), BaseViewGroup<V, B> {
 
     final override lateinit var binding: B
 
