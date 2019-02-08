@@ -15,7 +15,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override val toolbar: Toolbar? = null
     override val progressBar: ProgressBar? = null
 
-    override val viewModel: HomeViewModel by getLazyViewModel()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

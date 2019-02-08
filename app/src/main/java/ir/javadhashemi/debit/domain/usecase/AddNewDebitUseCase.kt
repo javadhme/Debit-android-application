@@ -1,9 +1,12 @@
 package ir.javadhashemi.debit.domain.usecase
 
+import io.reactivex.Observable
+import io.reactivex.Single
 import ir.javadhashemi.debit.domain.mapper.DebitModelMapper
 import ir.javadhashemi.debit.domain.model.DebitModel
 import ir.javadhashemi.debit.domain.repository.DebitRepository
-import ir.javadhashemi.debit.domain.usecase.base.UseCase
+import ir.javadhashemi.debit.domain.usecase.base.NormalUseCase
+import ir.javadhashemi.debit.domain.usecase.base.SingleUseCase
 import javax.inject.Inject
 
 /**
@@ -13,9 +16,9 @@ import javax.inject.Inject
 class AddNewDebitUseCase @Inject constructor(
         private val repository: DebitRepository,
         private val mapper: DebitModelMapper
-) : UseCase<DebitModel, Any>() {
+) : NormalUseCase<DebitModel, Long>() {
 
-    override fun execute(input: DebitModel?): Any {
+    override fun execute(input: DebitModel?): Long {
         return repository.addNewDebit(mapper.map(input!!))
     }
 

@@ -11,14 +11,14 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "debit")
 data class DebitEntity(
-        @PrimaryKey var id: Int = -1,
+        @PrimaryKey(autoGenerate = true) var id: Int = -1,
         @SerializedName("type") var type: Int,
         @SerializedName("name") var name: String,
         @SerializedName("desc") var desc: String,
         @SerializedName("cost") var cost: Int,
         @SerializedName("returned") var returnedMoney: Int,
-        @SerializedName("start_d") var startDate: Int,
-        @SerializedName("end_d") var endDate: Int,
+        @SerializedName("start_d") var startDate: String,
+        @SerializedName("end_d") var endDate: String,
         @SerializedName("is_done") var isDone: Boolean
 
 )

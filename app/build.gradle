@@ -48,6 +48,7 @@ dependencies {
 
     //----------------/ Common libraries \-----------------
     implementation common.anko_common
+    implementation common.persian_date_picker
     //-----------------------------------------------------
 
     //----------------/ support libraries \----------------

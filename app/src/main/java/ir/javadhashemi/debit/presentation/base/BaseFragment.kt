@@ -12,12 +12,10 @@ import android.support.v7.app.AppCompatActivity
 import android.view.*
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
+import java.lang.reflect.ParameterizedType
 import javax.inject.Inject
 
-/**
- * CREATED BY Javadroid FOR `WiCalory` PROJECT
- * AT: 2018/Jun/12 16:39
- */
+
 abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
     : Fragment(),
         BaseViewGroup<V, B>,
@@ -29,14 +27,14 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
     @Inject
     override lateinit var viewModelFactory: ViewModelProvider.Factory
 
-//    override val viewModel: V by lazy {
-//        @Suppress("UNCHECKED_CAST")
-//        ViewModelProviders.of(this, viewModelFactory).get((javaClass
-//                .genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<V>)
-//    }
+    override val viewModel: V by lazy {
+        @Suppress("UNCHECKED_CAST")
+        ViewModelProviders.of(this, viewModelFactory).get((javaClass
+                .genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<V>)
+    }
 
-    inline fun <reified T : BaseViewModel> getLazyViewModel(): Lazy<T> =
-            lazy { ViewModelProviders.of(this, viewModelFactory)[T::class.java] }
+//    inline fun <reified T : BaseViewModel> getLazyViewModel(): Lazy<T> =
+//            lazy { ViewModelProviders.of(this, viewModelFactory)[T::class.java] }
 
     abstract val title: String
     abstract var menuId: Int
@@ -49,7 +47,6 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-//        AndroidSupportInjection.inject(this)
         if (menuId > 0) {
             setHasOptionsMenu(true)
         }
@@ -86,27 +83,5 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
         super.onDestroy()
     }
 
-//    fun onRequestError(error: ApiError) {
-//        when (error.status) {
-//            ApiError.ErrorStatus.UNAUTHORIZED -> {
-//                authenticationError()
-//            }
-//        }
-//    }
-
-//    fun authenticationError(callback: ((Boolean) -> Unit)? = null) {
-//        val login = LoginDialog.newInstance()
-//
-//        login.loginListener = object : LoginResultListener {
-//            override fun onResult(status: Boolean) {
-//                if (status) {
-//                    if (callback != null) {
-//                        callback(status)
-//                    }
-//                }
-//            }
-//        }
-//        login.show(activity?.supportFragmentManager?.beginTransaction(), "LOGIN-DIALOG")
-//    }
 
 }

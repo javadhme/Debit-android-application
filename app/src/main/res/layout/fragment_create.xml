@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="createViewModel"
+            type="ir.javadhashemi.debit.presentation.create.CreateViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,6 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/margin16"
+                    android:onRadioGroupChangeListener="@{createViewModel.type}"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -110,6 +119,7 @@
                             android:fontFamily="@font/samim_family"
                             android:hint="@string/from_who_text"
                             android:inputType="text"
+                            android:textChangeListenerObserver="@{createViewModel.fromWho}"
                             android:textSize="@dimen/text_size_normal" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -137,6 +147,7 @@
                             android:fontFamily="@font/samim_family"
                             android:hint="@string/how_much"
                             android:inputType="numberDecimal"
+                            android:textChangeListenerObserver="@{createViewModel.howMuch}"
                             android:textSize="@dimen/text_size_normal" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -150,6 +161,7 @@
                     android:orientation="horizontal">
 
                     <CheckBox
+                        android:id="@+id/has_deadline"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -161,6 +173,7 @@
                         android:drawablePadding="@dimen/margin10"
                         android:fontFamily="@font/samim_family"
                         android:gravity="center"
+                        android:onCheckboxChangeListener="@{createViewModel.hasDeadline}"
                         android:text="@string/not_defined_text" />
 
                     <android.support.design.widget.TextInputLayout
@@ -174,10 +187,12 @@
                             android:id="@+id/when"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="@{createViewModel.hasDeadline ? true : false}"
                             android:focusableInTouchMode="false"
                             android:fontFamily="@font/samim_family"
                             android:hint="@string/when_title"
                             android:inputType="text"
+                            android:text="@{createViewModel.deadline}"
                             android:textSize="@dimen/text_size_normal" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -205,6 +220,7 @@
                             android:fontFamily="@font/samim_family"
                             android:hint="@string/description_text"
                             android:inputType="textMultiLine"
+                            android:textChangeListenerObserver="@{createViewModel.description}"
                             android:textSize="@dimen/text_size_normal" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -222,6 +238,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin16"
                         android:fontFamily="@font/samim_family"
+                        android:onClick="@{()->createViewModel.save()}"
                         android:text="@string/confirm_text"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_normal" />
@@ -234,6 +251,7 @@
                         android:layout_marginLeft="@dimen/margin16"
                         android:layout_marginTop="@dimen/margin16"
                         android:fontFamily="@font/samim_family"
+                        android:onClick="@{()->createViewModel.dismiss()}"
                         android:text="@string/decline_text"
                         android:textColor="@color/colorAccent"
                         android:textSize="@dimen/text_size_normal"

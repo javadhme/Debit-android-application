@@ -55,7 +55,8 @@ ext {
     ]
 
     common = [
-            anko_common: "org.jetbrains.anko:anko-commons:0.10.4"
+            anko_common: "org.jetbrains.anko:anko-commons:0.10.4",
+            persian_date_picker: "com.alirezaafkar:sundatepicker:2.1.1"
     ]
 
     testDependencies = [

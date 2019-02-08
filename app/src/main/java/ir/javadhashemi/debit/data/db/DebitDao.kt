@@ -1,10 +1,13 @@
 package ir.javadhashemi.debit.data.db
 
 import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.Observer
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
+import io.reactivex.Observable
+import io.reactivex.Single
 import ir.javadhashemi.debit.data.entity.DebitEntity
 
 /**
@@ -15,7 +18,7 @@ import ir.javadhashemi.debit.data.entity.DebitEntity
 interface DebitDao {
 
     @Insert
-    fun addNewDebit(data: DebitEntity)
+    fun addNewDebit(data: DebitEntity): Long
 
     @Query("select * from debit where `type` = :type order by endDate DESC")
     fun getAllDebits(type: Int): LiveData<List<DebitEntity>>
@@ -24,8 +27,7 @@ interface DebitDao {
     fun getTotalDebitsByType(type: Int): Long
 
     @Update
-    fun updateDebit(debit: DebitEntity) : Int
-
+    fun updateDebit(debit: DebitEntity): Int
 
 
 }

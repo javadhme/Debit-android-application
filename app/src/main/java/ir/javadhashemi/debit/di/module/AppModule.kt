@@ -7,7 +7,9 @@ import dagger.Provides
 import ir.javadhashemi.debit.di.builder.ViewModelFactoryBuilder
 
 @Module(includes = [
-    (ViewModelFactoryBuilder::class)
+    (ViewModelFactoryBuilder::class),
+    DebitRepositoryModule::class,
+    MapperModule::class
 ])
 class AppModule {
 
@@ -19,5 +21,4 @@ class AppModule {
     fun provideContext(application: Application): Context {
         return application.applicationContext
     }
-
 }
