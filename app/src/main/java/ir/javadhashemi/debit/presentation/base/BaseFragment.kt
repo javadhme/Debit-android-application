@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.*
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
+import ir.javadhashemi.debit.presentation.CommonToast
 import java.lang.reflect.ParameterizedType
 import javax.inject.Inject
 
@@ -81,6 +82,13 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding>
             backCallback?.value = null
         }
         super.onDestroy()
+    }
+
+
+    fun showMessage(message: String, duration: Int = CommonToast.LENGTH_LONG) {
+        context?.let {
+            CommonToast.makeToast(it, message, duration).show()
+        }
     }
 
 

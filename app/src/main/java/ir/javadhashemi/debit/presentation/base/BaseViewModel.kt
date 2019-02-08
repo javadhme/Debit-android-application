@@ -1,5 +1,6 @@
 package ir.javadhashemi.debit.presentation.base
 
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import android.databinding.ObservableField
 import io.reactivex.disposables.CompositeDisposable
@@ -12,6 +13,8 @@ open class BaseViewModel() : ViewModel() {
 
     val showProgress: ObservableField<Boolean> = ObservableField()
     val networkError: ObservableField<Boolean> = ObservableField()
+
+    val commonMessage: MutableLiveData<String> = MutableLiveData()
 
     val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
