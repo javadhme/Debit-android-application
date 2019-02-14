@@ -3,12 +3,19 @@ package ir.javadhashemi.debit.util
 import android.arch.lifecycle.MutableLiveData
 import android.databinding.BindingAdapter
 import android.databinding.ObservableField
+import android.support.design.widget.TextInputLayout
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.RadioGroup
 
+@BindingAdapter(value = ["android:errorMessage"])
+fun setErrorMessage(target: TextInputLayout, error: ObservableField<String>?) {
+    error?.let {
+        target.error = error.get()
+    }
+}
 
 @BindingAdapter(value = ["android:textChangeListenerObserver"])
 fun setEditTextObservable(target: EditText, data: ObservableField<String>?) {
@@ -57,3 +64,4 @@ fun setRadioGroupChangeListener(target: RadioGroup, index: ObservableField<Int>?
         index?.set(checkedId)
     }
 }
+

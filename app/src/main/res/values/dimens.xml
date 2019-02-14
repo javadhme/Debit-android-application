@@ -6,4 +6,7 @@
     <dimen name="margin16">16dp</dimen>
     <dimen name="margin5">5dp</dimen>
     <dimen name="margin8">8dp</dimen>
+    <dimen name="toast_corner_radius">50dp</dimen>
+
+
 </resources>

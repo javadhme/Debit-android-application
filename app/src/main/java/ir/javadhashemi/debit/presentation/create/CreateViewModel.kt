@@ -1,15 +1,12 @@
 package ir.javadhashemi.debit.presentation.create
 
+import android.arch.lifecycle.MutableLiveData
 import android.databinding.ObservableField
 import ir.javadhashemi.debit.domain.model.DebitModel
 import ir.javadhashemi.debit.domain.model.UseCaseResponse
 import ir.javadhashemi.debit.domain.usecase.AddNewDebitUseCase
-import ir.javadhashemi.debit.domain.usecase.AddNewDebitUseCase_Factory
-import ir.javadhashemi.debit.domain.usecase.EditDebitUseCase
 import ir.javadhashemi.debit.presentation.base.BaseViewModel
-import ir.javadhashemi.debit.util.Constants
 import ir.javadhashemi.debit.util.DateUtils
-import ir.javadhashemi.debit.util.Logger
 import java.util.*
 import javax.inject.Inject
 
@@ -21,37 +18,72 @@ class CreateViewModel @Inject constructor(private val createDebitUseCase: AddNew
     val deadline: ObservableField<String> = ObservableField()
     val description: ObservableField<String> = ObservableField()
 
-    val hasDeadline: ObservableField<Boolean> = ObservableField()
+    val personError: ObservableField<String> = ObservableField()
+    val moneyError: ObservableField<String> = ObservableField()
+    val dateError: ObservableField<String> = ObservableField()
+    val descError: ObservableField<String> = ObservableField()
+
+    val noDeadline: ObservableField<Boolean> = ObservableField()
 
     init {
-        hasDeadline.set(false)
+        noDeadline.set(false)
 
     }
 
 
     fun save() {
         //TODO input checking
-        Logger.printLog("Save Click")
-        createDebitUseCase.execute(compositeDisposable, DebitModel().apply {
-            name = fromWho.get()!!
-            cost = howMuch.get()!!.toInt()
-            desc = description.get()!!
-            hasDeadLine = hasDeadline.get() == true
-            startDate = DateUtils.getDefaultDateFormat().format(Date())
-            deadline.get()?.let { value ->
-                endDate = value
-            }
-        }, object : UseCaseResponse<Long> {
+        println("type is -> ${type.get()}")
+        if(type.get() == null){
+            commonMessage.value = "نوع آیتم را ابتدا مشخص نمایید"
+            return
+        }
+
+        if (fromWho.get() == null || fromWho.get() == "") {
+            personError.set("نام شخص باید وارد شود")
+            return
+        } else {
+            personError.set("")
+        }
+
+        if (howMuch.get() == null || howMuch.get() == "") {
+            moneyError.set("مبلغ باید وارد شود")
+            return
+        } else {
+            moneyError.set("")
+        }
+
+        if (noDeadline.get() == false && (deadline.get() == null || deadline.get() == "")) {
+            dateError.set("تاریخ باید وارد شود. در غیراینصورت معلوم نیست انتخاب گردد")
+            return
+        } else {
+            dateError.set("")
+        }
+
+        val debitModel = createDebitModel()
+
+        createDebitUseCase.execute(compositeDisposable, debitModel, object : UseCaseResponse<Long> {
 
             override fun onSuccess(value: Long) {
-                println("SUCCESS called with value=$value")
+                commonMessage.value = "آیتم با موفقیت اضافه شد"
             }
 
             override fun onError(error: Throwable) {
-                println("onError called with error=[$error]")
+                commonMessage.value = "خطا در هنگام درج اطلاعات"
             }
 
         })
+    }
+
+    private fun createDebitModel(): DebitModel = DebitModel().apply {
+        name = fromWho.get()!!
+        cost = howMuch.get()!!.toInt()
+        desc = description.get()!!
+        hasDeadLine = noDeadline.get() == true
+        startDate = DateUtils.getDefaultDateFormat().format(Date())
+        deadline.get()?.let { value ->
+            endDate = value
+        }
     }
 
     fun dismiss() {

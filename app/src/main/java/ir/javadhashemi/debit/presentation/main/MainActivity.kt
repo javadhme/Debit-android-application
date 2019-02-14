@@ -19,12 +19,12 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        navigator.gotoCreatePage()
     }
 
     override fun onStart() {
         super.onStart()
-        navigator.gotoCreatePage()
+
     }
 
 }

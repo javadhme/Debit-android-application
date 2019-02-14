@@ -24,6 +24,8 @@ class NavigatorController @Inject constructor(
 
         isRunning = true
 
+        val existing = manager.findFragmentByTag(backStackTag)
+
         manager.beginTransaction().apply {
             setCustomAnimation(animationType)
             add(root_view, fragment)

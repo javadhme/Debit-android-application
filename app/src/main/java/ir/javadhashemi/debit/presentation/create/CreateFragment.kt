@@ -1,5 +1,6 @@
 package ir.javadhashemi.debit.presentation.create
 
+import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.widget.Toolbar
 import android.view.View
@@ -31,6 +32,11 @@ class CreateFragment : BaseFragment<CreateViewModel, FragmentCreateBinding>() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        viewModel.commonMessage.observe(viewLifecycleOwner, Observer {
+            it?.let { message ->
+                showMessage(message)
+            }
+        })
     }
 
 

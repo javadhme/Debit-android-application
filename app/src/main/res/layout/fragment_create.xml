@@ -110,12 +110,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin8"
+                        app:errorEnabled="true"
+                        android:errorMessage="@{createViewModel.personError}"
                         android:layout_weight="1">
 
                         <android.support.design.widget.TextInputEditText
                             android:id="@+id/from_who"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+
                             android:fontFamily="@font/samim_family"
                             android:hint="@string/from_who_text"
                             android:inputType="text"
@@ -137,6 +140,8 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        android:errorMessage="@{createViewModel.moneyError}"
                         android:layout_marginTop="@dimen/margin8"
                         android:layout_weight="1">
 
@@ -173,13 +178,15 @@
                         android:drawablePadding="@dimen/margin10"
                         android:fontFamily="@font/samim_family"
                         android:gravity="center"
-                        android:onCheckboxChangeListener="@{createViewModel.hasDeadline}"
+                        android:onCheckboxChangeListener="@{createViewModel.noDeadline}"
                         android:text="@string/not_defined_text" />
 
                     <android.support.design.widget.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        android:errorMessage="@{createViewModel.dateError}"
                         android:layout_marginTop="@dimen/margin8"
                         android:layout_weight="1">
 
@@ -187,7 +194,7 @@
                             android:id="@+id/when"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:enabled="@{createViewModel.hasDeadline ? true : false}"
+                            android:enabled="@{createViewModel.noDeadline ? false : true}"
                             android:focusableInTouchMode="false"
                             android:fontFamily="@font/samim_family"
                             android:hint="@string/when_title"
@@ -209,6 +216,8 @@
                     <android.support.design.widget.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
+                        app:errorEnabled="true"
+                        android:errorMessage="@{createViewModel.descError}"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin8"
                         android:layout_weight="1">
