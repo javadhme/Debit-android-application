@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -13,23 +12,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/main_container"
         android:orientation="vertical">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/create_app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/create_tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </android.support.v7.widget.Toolbar>
+            </androidx.appcompat.widget.Toolbar>
 
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-        <android.support.v4.widget.NestedScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -38,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+
                 android:padding="@dimen/margin16">
 
                 <TextView
@@ -45,6 +46,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/samim_family"
                     android:text="@string/add_title"
+                    android:textColor="@color/textColorPrimary"
                     android:textSize="@dimen/text_size_large"
                     android:textStyle="bold" />
 
@@ -70,6 +72,7 @@
                         android:fontFamily="@font/samim_family"
                         android:padding="@dimen/margin8"
                         android:text="@string/debit_label"
+                        android:textColor="@color/textColorSecondary"
                         android:textSize="@dimen/text_size_normal" />
 
                     <RadioButton
@@ -85,6 +88,7 @@
                         android:fontFamily="@font/samim_family"
                         android:padding="@dimen/margin8"
                         android:text="@string/credit_label"
+                        android:textColor="@color/textColorSecondary"
                         android:textSize="@dimen/text_size_normal" />
                 </RadioGroup>
 
@@ -105,27 +109,25 @@
                         android:padding="@dimen/margin5"
                         android:src="@drawable/ic_account" />
 
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/commonTextInputLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin8"
-                        app:errorEnabled="true"
+                        android:layout_weight="1"
                         android:errorMessage="@{createViewModel.personError}"
-                        android:layout_weight="1">
+                        app:errorEnabled="true">
 
-                        <android.support.design.widget.TextInputEditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/from_who"
+                            style="@style/commonEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
-                            android:fontFamily="@font/samim_family"
                             android:hint="@string/from_who_text"
                             android:inputType="text"
-                            android:textChangeListenerObserver="@{createViewModel.fromWho}"
-                            android:textSize="@dimen/text_size_normal" />
+                            android:textChangeListenerObserver="@{createViewModel.fromWho}" />
 
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -136,26 +138,25 @@
                     android:baselineAligned="false"
                     android:orientation="horizontal">
 
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/commonTextInputLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        app:errorEnabled="true"
-                        android:errorMessage="@{createViewModel.moneyError}"
                         android:layout_marginTop="@dimen/margin8"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:errorMessage="@{createViewModel.moneyError}"
+                        app:errorEnabled="true">
 
-                        <android.support.design.widget.TextInputEditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/how_much"
+                            style="@style/commonEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/samim_family"
                             android:hint="@string/how_much"
                             android:inputType="numberDecimal"
-                            android:textChangeListenerObserver="@{createViewModel.howMuch}"
-                            android:textSize="@dimen/text_size_normal" />
+                            android:textChangeListenerObserver="@{createViewModel.howMuch}" />
 
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -179,30 +180,30 @@
                         android:fontFamily="@font/samim_family"
                         android:gravity="center"
                         android:onCheckboxChangeListener="@{createViewModel.noDeadline}"
-                        android:text="@string/not_defined_text" />
+                        android:text="@string/not_defined_text"
+                        android:textColor="@color/textColorSecondary" />
 
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/commonTextInputLayout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        app:errorEnabled="true"
-                        android:errorMessage="@{createViewModel.dateError}"
                         android:layout_marginTop="@dimen/margin8"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:errorMessage="@{createViewModel.dateError}"
+                        app:errorEnabled="true">
 
-                        <android.support.design.widget.TextInputEditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/when"
+                            style="@style/commonEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:enabled="@{createViewModel.noDeadline ? false : true}"
                             android:focusableInTouchMode="false"
-                            android:fontFamily="@font/samim_family"
                             android:hint="@string/when_title"
                             android:inputType="text"
-                            android:text="@{createViewModel.deadline}"
-                            android:textSize="@dimen/text_size_normal" />
+                            android:text="@{createViewModel.deadline}" />
 
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -213,26 +214,25 @@
                     android:baselineAligned="false"
                     android:orientation="horizontal">
 
-                    <android.support.design.widget.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/commonTextInputLayout"
                         android:layout_width="0dp"
-                        app:errorEnabled="true"
-                        android:errorMessage="@{createViewModel.descError}"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin8"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:errorMessage="@{createViewModel.descError}"
+                        app:errorEnabled="true">
 
-                        <android.support.design.widget.TextInputEditText
+                        <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/description"
+                            style="@style/commonEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/samim_family"
                             android:hint="@string/description_text"
                             android:inputType="textMultiLine"
-                            android:textChangeListenerObserver="@{createViewModel.description}"
-                            android:textSize="@dimen/text_size_normal" />
+                            android:textChangeListenerObserver="@{createViewModel.description}" />
 
-                    </android.support.design.widget.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
@@ -241,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <android.support.design.button.MaterialButton
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/confirm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -250,9 +250,10 @@
                         android:onClick="@{()->createViewModel.save()}"
                         android:text="@string/confirm_text"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_normal" />
+                        android:textSize="@dimen/text_size_normal"
+                        app:backgroundTint="@color/colorPrimaryDark" />
 
-                    <android.support.design.button.MaterialButton
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/cancel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -270,6 +271,6 @@
 
             </LinearLayout>
 
-        </android.support.v4.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </layout>

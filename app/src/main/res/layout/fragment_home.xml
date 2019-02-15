@@ -1,97 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_gravity="end"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/total_debit_unit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin10"
-                    android:layout_marginRight="@dimen/margin10"
-                    android:fontFamily="@font/tanha"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="@dimen/text_size_normal"
-                    tools:text="تومان" />
-
-                <TextSwitcher
-                    android:id="@+id/total_debit_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin16"
-                    android:layout_marginRight="@dimen/margin16"
-                    android:fontFamily="@font/tanha"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="40sp"
-                    tools:text="3,380" />
-
-                <TextView
-                    android:id="@+id/total_debit_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/tanha"
-                    android:text="@string/total_debit_title"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="@dimen/text_size_normal"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin16">
-
-                <TextView
-                    android:id="@+id/total_credit_unit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin10"
-                    android:layout_marginRight="@dimen/margin10"
-                    android:fontFamily="@font/tanha"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="@dimen/text_size_normal"
-                    tools:text="تومان" />
-
-                <TextSwitcher
-                    android:id="@+id/total_credit_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/margin16"
-                    android:layout_marginRight="@dimen/margin16"
-                    android:fontFamily="@font/tanha"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="40sp"
-                    tools:text="312,380" />
-
-                <TextView
-                    android:id="@+id/total_credit_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/tanha"
-                    android:text="@string/total_credit_title"
-                    android:textColor="@color/primaryTextColor"
-                    android:textSize="@dimen/text_size_normal"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </LinearLayout>
 
     </RelativeLayout>
 

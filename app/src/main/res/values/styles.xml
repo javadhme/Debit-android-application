@@ -8,6 +8,35 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/samim_family</item>
+    </style>
+
+    <style name="commonEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:fontFamily">@font/samim_family</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_drawable</item>
+    </style>
+
+    <style name="commonTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <!-- hint on focus -->
+        <item name="hintTextAppearance">@style/hintText</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+        <!-- hint on default style -->
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <!--on focus border -->
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+    </style>
+
+    <style name="hintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/text_input_hint</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="ErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textColor">#b93b53</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
 </resources>

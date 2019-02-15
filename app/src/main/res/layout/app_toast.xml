@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/samim_family"
         android:textSize="@dimen/text_size_normal"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/textColorPrimary"
         android:gravity="center" />
 
 </LinearLayout>
