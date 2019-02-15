@@ -24,7 +24,7 @@
         <item name="errorTextAppearance">@style/ErrorText</item>
         <item name="android:textSize">@dimen/text_size_normal</item>
         <!-- hint on default style -->
-        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@color/edittextStroke</item>
         <!--on focus border -->
         <item name="boxStrokeColor">@color/text_input_box_stroke</item>
     </style>

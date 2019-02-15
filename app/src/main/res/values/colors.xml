@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimaryLight">#53527a</color>
-    <color name="colorPrimary">#313866</color>
+    <color name="colorPrimary">#272a4d</color>
     <color name="colorPrimaryDark">#191c33</color>
     <color name="colorAccent">#f5a623</color>
     <color name="textColorPrimary">#ffffff</color>
     <color name="textColorSecondary">#a5a7bc</color>
-    <color name="main_container">#313866</color>
+    <color name="main_container">#272a4d</color>
     <color name="white">#ffffff</color>
+
+    <color name="edittextStroke">#424770</color>
 
     <color name="red">#b93b53</color>
     <color name="green">#3bb967</color>
