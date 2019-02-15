@@ -1,8 +1,8 @@
 package com.yaramobile.wicalory.util.extension
 
 import android.os.Handler
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import ir.javadhashemi.debit.R
 
@@ -13,7 +13,7 @@ import ir.javadhashemi.debit.R
 /**
  * Runs a FragmentTransaction, then calls commit().
  */
-fun AppCompatActivity.replaceFragmentWithAnimation(container: View, fragment: Fragment, backstackTag: String) {
+fun AppCompatActivity.replaceFragmentWithAnimation(container: View, fragment: androidx.fragment.app.Fragment, backstackTag: String) {
     Handler().post {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left)
@@ -24,7 +24,7 @@ fun AppCompatActivity.replaceFragmentWithAnimation(container: View, fragment: Fr
 
 }
 
-fun AppCompatActivity.replaceFragmentSlidingUp(container: View, fragment: Fragment, backstackTag: String) {
+fun AppCompatActivity.replaceFragmentSlidingUp(container: View, fragment: androidx.fragment.app.Fragment, backstackTag: String) {
     Handler().post {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setCustomAnimations(R.anim.enter_from_bottom, R.anim.exit_to_bottom, R.anim.enter_from_bottom, R.anim.exit_to_bottom)

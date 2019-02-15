@@ -1,8 +1,8 @@
 package ir.javadhashemi.debit.util.extension
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentTransaction
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.RecyclerView
 import ir.javadhashemi.debit.R
 import org.jetbrains.anko.bundleOf
 
@@ -15,7 +15,7 @@ enum class TransitionAnimation {
 }
 
 
-fun FragmentTransaction.setCustomAnimation(type: TransitionAnimation) {
+fun androidx.fragment.app.FragmentTransaction.setCustomAnimation(type: TransitionAnimation) {
     when (type) {
         TransitionAnimation.SLIDE_IN -> setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left)
         TransitionAnimation.SLIDE_UP -> setCustomAnimations(R.anim.enter_from_bottom, R.anim.exit_to_bottom, R.anim.enter_from_bottom, R.anim.exit_to_bottom)
@@ -24,12 +24,12 @@ fun FragmentTransaction.setCustomAnimation(type: TransitionAnimation) {
     }
 }
 
-inline fun <reified T : Fragment> newFragmentInstance(vararg params: Pair<String, Any>): T =
+inline fun <reified T : androidx.fragment.app.Fragment> newFragmentInstance(vararg params: Pair<String, Any>): T =
         T::class.java.newInstance().apply {
             arguments = bundleOf(*params)
         }
 
-fun RecyclerView.addItemSlideUpAnimation() {
+fun androidx.recyclerview.widget.RecyclerView.addItemSlideUpAnimation() {
 //    val animationController : LayoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.item_animation_slide_up)
 //    layoutAnimation = animationController
 //    scheduleLayoutAnimation()

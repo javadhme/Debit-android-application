@@ -1,8 +1,8 @@
 package ir.javadhashemi.debit.presentation.create
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.ProgressBar
 import ir.javadhashemi.debit.R

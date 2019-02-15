@@ -1,7 +1,7 @@
 package ir.javadhashemi.debit.presentation.base
 
-import android.arch.lifecycle.ViewModelProvider
-import android.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModelProvider
+import androidx.databinding.ViewDataBinding
 
 /**
  * CREATED BY Javadroid FOR `WiCalory` PROJECT

@@ -1,6 +1,6 @@
 package ir.javadhashemi.debit.presentation.base
 
-import android.support.v4.app.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 
 /**
  * CREATED BY Javadroid FOR `WiCalory` PROJECT
@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentActivity
  */
 interface OnBackPressedListener {
 
-    fun onBackPressed(activity: FragmentActivity) : Boolean
+    fun onBackPressed(activity: androidx.fragment.app.FragmentActivity) : Boolean
 
 
 }

@@ -1,6 +1,6 @@
 package ir.javadhashemi.debit.di.module
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import dagger.Module
 import dagger.Provides
 import ir.javadhashemi.debit.di.scope.ActivityScope

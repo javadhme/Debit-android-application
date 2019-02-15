@@ -1,6 +1,6 @@
 package ir.javadhashemi.debit.data.repository
 
-import android.arch.lifecycle.LiveData
+import androidx.lifecycle.LiveData
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single

@@ -1,7 +1,7 @@
 package ir.javadhashemi.debit.presentation.create
 
-import android.arch.lifecycle.MutableLiveData
-import android.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
+import androidx.databinding.ObservableField
 import ir.javadhashemi.debit.domain.model.DebitModel
 import ir.javadhashemi.debit.domain.model.UseCaseResponse
 import ir.javadhashemi.debit.domain.usecase.AddNewDebitUseCase

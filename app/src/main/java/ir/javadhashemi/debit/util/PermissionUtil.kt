@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
 import java.util.*
 
 /**
@@ -48,7 +48,7 @@ class PermissionUtil {
     }
 
     fun requestPermission(
-            fragment: Fragment,
+            fragment: androidx.fragment.app.Fragment,
             vararg permissions: String,
             callback: (grantedPermissions: List<String>, declinedPermissions: List<String>) -> Unit) {
 

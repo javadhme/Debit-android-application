@@ -1,9 +1,9 @@
 package ir.javadhashemi.debit.util
 
-import android.arch.lifecycle.MutableLiveData
-import android.databinding.BindingAdapter
-import android.databinding.ObservableField
-import android.support.design.widget.TextInputLayout
+import androidx.lifecycle.MutableLiveData
+import androidx.databinding.BindingAdapter
+import androidx.databinding.ObservableField
+import com.google.android.material.textfield.TextInputLayout
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.CheckBox

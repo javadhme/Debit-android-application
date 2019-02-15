@@ -2,8 +2,8 @@ package com.yaramobile.wicalory.util.extension
 
 import android.content.Context
 import android.os.Handler
-import android.support.v4.app.DialogFragment
-import android.support.v4.app.Fragment
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import android.view.View
 import com.yaramobile.wicalory.data.local.pref.PreferenceManager
 import ir.javadhashemi.debit.R
@@ -15,7 +15,7 @@ import ir.javadhashemi.debit.R
 
 fun Context.getAppPrefs(): PreferenceManager = PreferenceManager.getInstance(this)
 
-fun DialogFragment.replaceFragmentWithAnimation(container: View, fragment: Fragment, backstackTag: String) {
+fun androidx.fragment.app.DialogFragment.replaceFragmentWithAnimation(container: View, fragment: androidx.fragment.app.Fragment, backstackTag: String) {
     Handler().post {
         val transaction = childFragmentManager.beginTransaction()
         transaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left)

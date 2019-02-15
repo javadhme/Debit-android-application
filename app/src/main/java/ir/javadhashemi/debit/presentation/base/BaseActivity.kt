@@ -1,12 +1,12 @@
 package ir.javadhashemi.debit.presentation.base
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import dagger.android.AndroidInjection
 import dagger.android.support.DaggerAppCompatActivity
 

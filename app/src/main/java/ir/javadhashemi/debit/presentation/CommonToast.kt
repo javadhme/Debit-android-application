@@ -1,7 +1,7 @@
 package ir.javadhashemi.debit.presentation
 
 import android.content.Context
-import android.support.v4.view.ViewCompat
+import androidx.core.view.ViewCompat
 import android.view.LayoutInflater
 import android.widget.TextView
 import android.widget.Toast

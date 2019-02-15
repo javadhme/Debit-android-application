@@ -14,7 +14,7 @@ android {
         targetSdkVersion androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     dataBinding {
@@ -52,22 +52,22 @@ dependencies {
     //-----------------------------------------------------
 
     //----------------/ support libraries \----------------
-    implementation android_support.appCompat
-    implementation android_support.design
-    implementation android_support.cardView
-    implementation android_support.constraintLayout
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     //-----------------------------------------------------
 
     //----------------/ Android Arch \---------------------
-    implementation androidArch.LifeCycle
-    kapt androidArch.archCompiler
-    implementation androidArch.ReactiveStreams
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.0.0-alpha1'
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.0.0-alpha1'
     //-----------------------------------------------------
 
     //----------------/ Room \-----------------------------
-    implementation room.room
-    kapt room.compiler
-    implementation room.rx_converter
+    implementation 'androidx.room:room-runtime:2.1.0-alpha02'
+    kapt 'androidx.room:room-compiler:2.0.0-alpha1'
+    implementation 'androidx.room:room-rxjava2:2.1.0-alpha02'
     //-----------------------------------------------------
 
     //----------------/ Retrofit \-------------------------
@@ -92,8 +92,8 @@ dependencies {
     //----------------/ Test Libs \------------------------
     testImplementation testDependencies.junit
     testImplementation testDependencies.mockitoKotlin
-    testImplementation testDependencies.archTesting
-    androidTestImplementation testDependencies.testRunner
-    androidTestImplementation testDependencies.esperesso
+    testImplementation 'androidx.arch.core:core-testing:2.0.0-alpha1'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
     //-----------------------------------------------------
 }

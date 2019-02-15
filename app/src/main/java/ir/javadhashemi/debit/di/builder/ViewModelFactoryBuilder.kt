@@ -1,6 +1,6 @@
 package ir.javadhashemi.debit.di.builder
 
-import android.arch.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import ir.javadhashemi.debit.di.common.DebitViewModelFactory

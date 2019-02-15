@@ -1,8 +1,8 @@
 package ir.javadhashemi.debit.presentation.base
 
-import android.support.design.widget.AppBarLayout
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
+import com.google.android.material.appbar.AppBarLayout
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 
 /**
@@ -18,10 +18,10 @@ interface ToolbarManager {
             toolbar?.title = value
         }
 
-    fun attachToScroll(recyclerView: RecyclerView) {
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+    fun attachToScroll(recyclerView: androidx.recyclerview.widget.RecyclerView) {
+        recyclerView.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
 
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 val appBar = toolbar?.parent
                 val scrollItem = if (appBar != null && appBar is AppBarLayout) appBar else toolbar

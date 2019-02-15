@@ -1,7 +1,7 @@
 package ir.javadhashemi.debit.data.db
 
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
+import androidx.room.Database
+import androidx.room.RoomDatabase
 import ir.javadhashemi.debit.data.entity.DebitEntity
 import ir.javadhashemi.debit.util.Constants
 

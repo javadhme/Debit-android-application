@@ -1,6 +1,6 @@
 package ir.javadhashemi.debit.di.module
 
-import android.arch.persistence.room.Room
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import ir.javadhashemi.debit.App

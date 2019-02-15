@@ -1,7 +1,7 @@
 package ir.javadhashemi.debit.domain.usecase
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Transformations
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Transformations
 import ir.javadhashemi.debit.domain.mapper.DebitEntityMapper
 import ir.javadhashemi.debit.domain.model.DebitModel
 import ir.javadhashemi.debit.domain.repository.DebitRepository
