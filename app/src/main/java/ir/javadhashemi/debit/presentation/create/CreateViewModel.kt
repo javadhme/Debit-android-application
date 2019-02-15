@@ -69,6 +69,7 @@ class CreateViewModel @Inject constructor(private val createDebitUseCase: AddNew
             }
 
             override fun onError(error: Throwable) {
+                println(error)
                 commonMessage.value = "خطا در هنگام درج اطلاعات"
             }
 
@@ -78,7 +79,7 @@ class CreateViewModel @Inject constructor(private val createDebitUseCase: AddNew
     private fun createDebitModel(): DebitModel = DebitModel().apply {
         name = fromWho.get()!!
         cost = howMuch.get()!!.toInt()
-        desc = description.get()!!
+        desc = description.get()
         hasDeadLine = noDeadline.get() == true
         startDate = DateUtils.getDefaultDateFormat().format(Date())
         deadline.get()?.let { value ->

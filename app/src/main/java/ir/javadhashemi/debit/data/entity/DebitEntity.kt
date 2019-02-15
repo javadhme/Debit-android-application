@@ -14,7 +14,7 @@ data class DebitEntity(
         @PrimaryKey(autoGenerate = true) var id: Int = -1,
         @SerializedName("type") var type: Int,
         @SerializedName("name") var name: String,
-        @SerializedName("desc") var desc: String,
+        @SerializedName("desc") var desc: String? = "",
         @SerializedName("cost") var cost: Int,
         @SerializedName("returned") var returnedMoney: Int,
         @SerializedName("start_d") var startDate: String,

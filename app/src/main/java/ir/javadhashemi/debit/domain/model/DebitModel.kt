@@ -8,7 +8,7 @@ data class DebitModel(
         var localId: Int = 0,
         var type: Int = 0,
         var name: String = "",
-        var desc: String = "",
+        var desc: String? = "",
         var cost: Int = 0,
         var returnedMoney: Int = 0,
         var startDate: String = "",
